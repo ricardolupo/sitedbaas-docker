@@ -1,0 +1,24 @@
+{
+  "version": "2",
+  "build_cookbook": {
+    "name": "build-cookbook",
+    "path": ".delivery/build-cookbook"
+  },
+  "delivery-truck": {
+    "publish": {
+      "chef_server": true,
+      "supermarket": "https://cad-supermarket"
+    }
+  },
+  "skip_phases": [
+  "quality",
+  "security",
+  "unit",
+  "lint",
+  "syntax"
+  ],
+  "dependencies": ["httpdbaas","ubuntu-systemd"],
+  "build_nodes": { 
+      "default": ["name:cad-build-node-3"] 
+  }
+}
